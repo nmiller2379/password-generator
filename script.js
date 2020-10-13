@@ -1,11 +1,5 @@
 // I WANT to randomly generate a password that meets certain criteria
 
-// prompted for password criteria
-// var passwordLink prompts for length
-// var lowercase = confirm lowercase
-// var uppercase = confirm uppercase
-//
-
 // prompt for password length
 var userLength = prompt(
   "Select a password thength between 8 and 128 characters."
@@ -148,31 +142,18 @@ if (passwordLength < 8) {
   alert("Too many charaters.");
 } else if ((passwordLength = false)) {
   alert("Please select a password length.");
-} else (
+} else if (
   uppercase == false &&
   lowercase == false &&
   numerals == false &&
   specialCharacters == false
 ) 
-  alert("Your password must contain at least one criteria");
-  valueReprompt();
-
-// User selects which criteria to include in the password
-
-//prompt for the length of the password
-
-// length of at least 8 characters and no more than 128 characters
-
-//prompt for character types to include in the password
-
-// character types include lowercase, uppercase, numeric, and/or special characters
-
-// validate user imput ensure at least one character type is selected.
-// if any of the criteria is true continue
-//else if all of the character criteria is false ask the user again (reprompt)
+  {alert("Your password must contain at least one criteria");
+  valueReprompt();}
+else {alert("Your password will be generated.")}
 
 // Password generated
-//function to choose a lowercase letter it's equal to a math.random (like rps game)
+//function to choose a lowercase letters, etc. it's equal to a math.random (like rps game)
 // number of characters from each array determined by length var divided by 4.
 
 // think through if else combinations
