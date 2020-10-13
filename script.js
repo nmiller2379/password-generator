@@ -22,11 +22,15 @@ console.log(uppercase);
 console.log(numerals);
 console.log(specialCharacters);
 
-// declare function for use later in reprompting
+// declare function for use later in reprompting password length
 function lengthReprompt() {
   var userLength = prompt(
     "Select a password thength between 8 and 128 characters."
   );
+}
+
+// declare function for use later in reprompting
+function valueReprompt() {
   var lowercase = confirm("Use lowercase letters?");
   var uppercase = confirm("Use UPPERCASE letters?");
   var numerals = confirm("Use numerals?");
@@ -139,18 +143,19 @@ console.log(passwordLength);
 //else if all of the character criteria is false ask the user again (reprompt)
 if (passwordLength < 8) {
   alert("Not enough characters.");
+  lengthReprompt();
 } else if (passwordLength > 128) {
   alert("Too many charaters.");
 } else if ((passwordLength = false)) {
   alert("Please select a password length.");
-} else if (
+} else (
   uppercase == false &&
   lowercase == false &&
   numerals == false &&
   specialCharacters == false
-) {
+) 
   alert("Your password must contain at least one criteria");
-} else lengthReprompt;
+  valueReprompt();
 
 // User selects which criteria to include in the password
 
