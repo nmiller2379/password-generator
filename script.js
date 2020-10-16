@@ -16,19 +16,21 @@ console.log(uppercase);
 console.log(numerals);
 console.log(specialCharacters);
 
+var userChoice = []
+
 // declare function for use later in reprompting password length
 function lengthReprompt() {
-  var userLength = prompt(
+ userLength = prompt(
     "Select a password thength between 8 and 128 characters."
   );
 }
 
 // declare function for use later in reprompting
 function valueReprompt() {
-  var lowercase = confirm("Use lowercase letters?");
-  var uppercase = confirm("Use UPPERCASE letters?");
-  var numerals = confirm("Use numerals?");
-  var specialCharacters = confirm("Use special characters?");
+  lowercase = confirm("Use lowercase letters?");
+  uppercase = confirm("Use UPPERCASE letters?");
+  numerals = confirm("Use numerals?");
+  specialCharacters = confirm("Use special characters?");
 }
 
 var character = [
@@ -127,6 +129,9 @@ var smallLetters = [
   "z",
 ];
 console.log(smallLetters);
+var numbers = ["0","1","2","3","4","5","6","7", "8","9"]
+
+var passwordArray = []
 
 //convert passwordLength string to an integer
 var passwordLength = parseInt(userLength);
@@ -152,6 +157,28 @@ if (passwordLength < 8) {
   valueReprompt();}
 else {alert("Your password will be generated.")}
 
+if (uppercase) {
+  userChoice.concat(smallLetters)
+}
+if (lowercase) {
+  userChoice.concat(capLetters)
+}
+if (specialCharacters) {
+  userChoice.concat(character)
+}
+
+if (numerals) {
+  userChoice.concat(numbers)
+
+}
+
+for (var i = 0; i < passwordLength; i++) {
+  var indexNum = Math.floor(Math.random() * userChoice.length)
+
+  var chosenCharacter = userChoice[indexNum]
+
+  passwordArray.push(chosenCharacter)
+}
 // Password generated
 //function to choose a lowercase letters, etc. it's equal to a math.random (like rps game)
 // number of characters from each array determined by length var divided by 4.
